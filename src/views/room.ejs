@@ -31,7 +31,8 @@
                     <a href="home.html"><img src="images/logo.svg" alt="logotipo Rocket.Q" /></a>
 
                     <div class="buttons">
-                        <div class="button outlined">
+                        
+                        <div class="button outlined" id="room-id" data-id="323232">
                             #323232
                             <img src="images/icon-copy.svg" alt="copiar número da sala">
                            
@@ -85,12 +86,12 @@
                         </div>
                         <div class="actions">
                                        
-                                <a href="#">
+                                <a href="#" class="check" data-id="2">
                                     <img src="images/icon-check.svg" alt="Marcar como lida">
                                     Marcar como Lida
                                 </a>
                             
-                                <a href="#">   
+                                <a href="#" class="delete" data-id="2">   
                                     <img src="images/icon-trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
@@ -109,12 +110,12 @@
                         </div>
                         <div class="actions">
                                        
-                                <a href="#">
+                                <a href="#" class="check" data-id="3">
                                     <img src="images/icon-check.svg" alt="Marcar como lida">
                                     Marcar como Lida
                                 </a>
                             
-                                <a href="#">   
+                                <a href="#" class="delete" data-id="3">   
                                     <img src="images/icon-trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
@@ -134,12 +135,12 @@
                         </div>
                         <div class="actions">
                                        
-                                <a href="#">
+                                <a href="#" class="check" data-id="1">
                                     <img src="images/icon-check.svg" alt="Marcar como lida">
                                     Marcar como Lida
                                 </a>
                             
-                                <a href="#">   
+                                <a href="#" class="delete" data-id="1">   
                                     <img src="images/icon-trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
@@ -161,21 +162,24 @@
         <div class="modal-wrapper disable">
             <div class="modal">
                 <h2 class="title">Excluir Pergunta</h2>
-                <p>Tem certeza que você deseja excluir está pergunta?</p>
+                <p class="subtitle">Tem certeza que você deseja excluir está pergunta?</p>
 
-                <form action="">
+                <form action="" method="POST">
 
                     <label for="password" class="sr-only">Digite sua senha</label>
-                    <input type="password" placeholder="Digite sua senha" id="password">
+                    <input type="password" placeholder="Digite sua senha" id="password" name="password">
 
                     <div class="button-group">
-                        <a href="" class="button grey">Cancelar</a>
-                        <button class="red">Sim, excluir</button>
+                        <a href="#" class="button grey cancel">Cancelar</a>
+                        <button class="red" type="submit">Sim, excluir</button>
                     </div>
                     
                 </form>
             </div>
         </div>
 
+        <!-- SCRIPTS-->
+        <script src="scripts/main.js" defer type="module"></script>
+      
     </body>
   </html>
