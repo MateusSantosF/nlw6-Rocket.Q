@@ -1,0 +1,137 @@
+
+.sr-only{
+    position: absolute;
+    display: none;
+    visibility: 0;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1;
+    overflow: hidden;
+    white-space: nowrap;
+    border-width: 0;
+    clip-path: rect(0,0,0,0);
+}
+.disable{
+    position: absolute;
+    display: none;
+    visibility: 0;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1;
+    overflow: hidden;
+    white-space: nowrap;
+    border-width: 0;
+    clip-path: rect(0,0,0,0);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+}
+
+:root{
+    --blue: #3485FF;
+    --light-blue: #E0ECFF;
+    --red: #E83F5B;
+    --dark-blue: #0D114F;
+    --body-color:#FBFCFF;
+    --icons-details: #A5B0C1;
+    --overlay: #040911;
+
+    --grey-dark:#4D5E77;
+    --grey-blue: #A1B2CD;
+    --grey-medium:  #D3D9E2;
+    --grey-light: #E5EAF1;
+}
+
+html{
+    font-size: 62.5%;
+    
+}
+body{
+    display: flex;
+    height: 100vh;
+    
+    background-color: var(--body-color);
+}
+
+
+.content{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.content header{
+    width: 80%;  
+    margin: 3.5rem auto;
+}
+
+.content header img{
+    width: 16.7rem;
+}
+
+
+.content header img{
+    width: 16.7rem;
+}
+.title{
+    font-size: clamp(20px,5vw,2.8rem);
+    color:var(--dark-blue);
+    margin-bottom: 2.4rem;
+}
+
+
+
+body, button, input, textarea{
+    font-size: clamp(14px, 1.6px, 2vw); /* clamp( min, default, max)*/
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BUTTONS */
+button, input, .button{
+    height: 5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 3px 2px 0.2px rgba(0, 0, 0, 0.233);
+}
+button:focus, input:focus, .button:focus{
+    outline: none;
+    border: 2px solid var(--blue);
+}
+
+button, .button{
+    font-family: "Poppins";
+    font-weight: 500;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--blue);
+    color:var(--body-color);
+
+    cursor: pointer;
+}
+button.outlined,
+    .button.outlined{
+    background: var(--body-color);
+    border: .2rem solid var(--blue);
+    color: var(--blue);
+    
+}
+
+button:hover,.button:hover{
+    filter: brightness(1.2);
+    transition: filter .2s;
+}
+
+button > img,
+    .button > img{
+        margin-right: 1rem;
+    }
+

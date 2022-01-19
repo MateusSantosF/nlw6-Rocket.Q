@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+    <head>
+
+        <!--    VIEW PORT  -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--    CSS  -->
+        <link rel="stylesheet" href="styles/room.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+
+        <!--    FONTES  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@100;400;700&display=swap"
+        rel="stylesheet"
+        />
+
+        <!-- ICON-->
+        <link rel="icon" type="image/svg" href="images/Icon.svg">
+
+        <title>Rocket.Q - Perguntas e Respostas</title>
+    </head>
+    <body>
+        <div class="content" id="room">
+            <header>
+                <nav>
+                    <a href="home.html"><img src="images/logo.svg" alt="logotipo Rocket.Q" /></a>
+
+                    <div class="buttons">
+                        <div class="button outlined">
+                            #323232
+                            <img src="images/icon-copy.svg" alt="copiar número da sala">
+                           
+                        </div>
+        
+                        <a href="create-room.html" class="button">
+                            <img src="images/icon-users-white.svg" alt="Criar nova sala">
+                            Criar Sala
+                        </a>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <section id="question-form">
+                    <h2 class="title">Faça sua pergunta</h2>
+                    <form action="">
+                        
+                        <label for="question" class="sr-only">O que você quer perguntar?</label>
+                        <textarea name="O que você quer perguntar?" id="question" placeholder="O que você quer perguntar?"></textarea>
+                        <footer>
+                            <div>   
+                                <img src="images/lock_black.svg" alt="">
+                                Esta pergunta é anônima
+                            </div>
+    
+                            <div>
+                                <a href="" class="button">Enviar</a>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+
+
+            <section id="questions">
+                <h2 class="sr-only">Perguntas da comunidade</h2>
+
+                 
+                 
+                <div class="questions">
+                    
+                    <!-- Question 1-->
+                    <div class="question-wrapper ">
+                        <div class="question-content ">
+                            <div class="user">
+                                <img src="images/icon-users-white.svg" alt="Avatar">
+                            </div>
+                            <div class="question">
+                                <p>Qual a diferença entre const var e let no JavaScript?</p>
+                            </div>
+                        </div>
+                        <div class="actions">
+                                       
+                                <a href="#">
+                                    <img src="images/icon-check.svg" alt="Marcar como lida">
+                                    Marcar como Lida
+                                </a>
+                            
+                                <a href="#">   
+                                    <img src="images/icon-trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+                       </div>
+                    </div>
+
+                     <!-- Question 2-->
+                    <div class="question-wrapper ">
+                        <div class="question-content ">
+                            <div class="user">
+                                <img src="images/icon-users-white.svg" alt="Avatar">
+                            </div>
+                            <div class="question">
+                                <p>Qual a diferença entre const var e let no JavaScript?</p>
+                            </div>
+                        </div>
+                        <div class="actions">
+                                       
+                                <a href="#">
+                                    <img src="images/icon-check.svg" alt="Marcar como lida">
+                                    Marcar como Lida
+                                </a>
+                            
+                                <a href="#">   
+                                    <img src="images/icon-trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+                       </div>
+                    </div>
+                     <!-- Question 3-->
+                    <div class="question-wrapper read">
+                        <div class="question-content">
+                            <div class="user">
+                                <img src="images/icon-users-white.svg" alt="Avatar">
+                            </div>
+                            <div class="question">
+                                <p>
+                                Qual a diferença entre const var e let no JavaScript?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="actions">
+                                       
+                                <a href="#">
+                                    <img src="images/icon-check.svg" alt="Marcar como lida">
+                                    Marcar como Lida
+                                </a>
+                            
+                                <a href="#">   
+                                    <img src="images/icon-trash.svg" alt="Excluir">
+                                    Excluir
+                                </a>
+                       </div>
+                    </div>
+
+                     <!-- /Questios-->
+                </div>
+     
+             </section>
+
+            </main>
+
+        </div>
+
+
+        <!-- MODAL -->
+
+        <div class="modal-wrapper disable">
+            <div class="modal">
+                <h2 class="title">Excluir Pergunta</h2>
+                <p>Tem certeza que você deseja excluir está pergunta?</p>
+
+                <form action="">
+
+                    <label for="password" class="sr-only">Digite sua senha</label>
+                    <input type="password" placeholder="Digite sua senha" id="password">
+
+                    <div class="button-group">
+                        <a href="" class="button grey">Cancelar</a>
+                        <button class="red">Sim, excluir</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+    </body>
+  </html>

@@ -1,0 +1,246 @@
+
+.content{
+    max-width: min(102rem ,90%);
+}
+#room header nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#room header .buttons{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+#room header .buttons .button:nth-child(1){
+    margin-right: .8rem;
+    padding: 1.3rem 1.6rem;
+}
+#room header .buttons .button:nth-child(1) img{
+    margin-left: 1rem;
+}
+
+#room header .buttons .button:nth-child(2){
+    padding: 1.3rem 3.2rem;
+}
+
+#room .buttons img{
+    height: 2rem;
+    width: 2rem;
+}
+
+/* BOX QUESTION */
+
+
+
+#question-form form{
+    border: 2px solid var(--grey-blue);
+    border-radius: 0 1rem 1rem 1rem;
+    padding: 2.5rem 1.6rem;
+}
+
+#question-form form textarea:focus form{
+    border: 2px solid var(--blue);
+}
+
+#question-form form textarea{
+    width: 100%;
+    min-height: 6rem;
+    resize: none;
+    background-color: var(--body-color);
+}
+
+#question-form form textarea::placeholder{
+    color: var(--grey-blue);
+}
+
+#question-form form textarea:focus{
+    outline: none;
+   
+}
+
+#question-form form .button{
+    width: 9.8rem;
+    height: 4rem;
+}
+
+#question-form form footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--grey-blue);
+}
+
+#question-form form footer > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#question-form form footer > div img{
+    display: flex;
+    align-items: center;
+    margin-right: 0.9rem;
+}
+
+/* BOX QUESTION 2 */
+
+.questions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.6rem;
+}
+
+.question-wrapper{
+    margin-bottom: 1.6rem;
+    background-color: var(--light-blue) ;
+
+    border-radius: 0 1rem 1rem 1rem;
+} 
+
+.question-wrapper .question-content{
+    display: flex;
+    align-items: flex-start;
+    padding: 2.4rem;
+    color: var(--dark-blue);
+}
+.question-wrapper .question-content .question{
+    word-wrap: break-word;
+}
+.question-wrapper  .question-content p{
+    display: flex;
+    min-height: 5.2rem;
+    align-items: center;
+    margin-left: 1.6rem;
+    word-wrap:break-word;
+}
+
+.question-wrapper .question-content .user{
+    display: flex;
+    background-color: var(--blue);
+    width: 5.2rem;
+    height: 5.2rem;
+    clip-path: circle();
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem;
+}
+
+.question-wrapper .question-content .user img{
+    height: 2.4rem;
+    width: 2.4rem;
+  
+}
+
+.question-wrapper .question-content .question{
+    padding: 1.6rem 3.9rem;
+}
+
+
+.question-wrapper .actions{
+    display: flex;
+    width: 100%;
+    padding: 0rem 2.4rem 2.3rem 2.4rem ;
+    justify-content: right;
+    align-items: center;
+ 
+}
+.question-wrapper .actions > a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-wrapper .actions a{
+    text-decoration: none;
+    align-items: center;
+}
+.question-wrapper .actions > a > img{
+    height: 2.5rem;
+    width: 2.4rem;
+    margin-right: .8rem;
+}
+
+.question-wrapper .actions > a + a {
+    margin-left: .8rem;
+}
+
+/* QUESTION READ */
+.questions .question-wrapper.read {
+    background-color: var(--grey-light)
+}
+
+.questions .question-wrapper.read .question-content .user {
+    background-color: var(--grey-blue);
+}
+
+/* MODAL */
+
+.modal-wrapper{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.596);
+}
+
+.modal{
+    margin: auto;
+    width: min(56rem, 90%);
+    height: 36.8rem;
+    background-color: var(--body-color);
+    padding: 6.4rem;
+    text-align: center;
+    border-radius: 1.5rem;
+}
+.modal h2{
+  
+    margin-bottom: 1.5rem;
+}
+
+.modal p{
+    color: var(--grey);
+}
+.modal-wrapper .modal .button-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal form input[type="password"]{
+    width: 70%;
+    margin:2rem;
+    padding: 1.3rem 1.6rem;
+}
+
+.modal form input[type="password"]::placeholder{
+    
+}
+.modal .button,
+.modal button{
+        width: 13.9rem;
+        height: 5rem;
+    
+}
+
+.modal .button-group > a{
+    margin-right: 0.8rem;
+}
+
+button.red,
+.button.red{
+    background-color: var(--red);
+}
+
+button.grey,
+.button.grey{
+    background-color: var(--grey-light);
+    color: var(--dark-blue);
+}
