@@ -10,6 +10,9 @@
 </p>
 <br>
 
+![Home](https://user-images.githubusercontent.com/62969620/150247238-c18e7bfb-d952-4961-9379-756be1c34d01.png)
+
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
