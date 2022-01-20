@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!--    CSS  -->
-        <link rel="stylesheet" href="styles/room.css" />
-        <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="/styles/room.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
 
         <!--    FONTES  -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +20,7 @@
         />
 
         <!-- ICON-->
-        <link rel="icon" type="image/svg" href="images/Icon.svg">
+        <link rel="icon" type="image/svg" href="/images/Icon.svg">
 
         <title>Rocket.Q - Perguntas e Respostas</title>
     </head>
@@ -28,18 +28,21 @@
         <div class="content" id="room">
             <header>
                 <nav>
-                    <a href="home.html"><img src="images/logo.svg" alt="logotipo Rocket.Q" /></a>
+                    <a href="/"><img src="/images/logo.svg" alt="logotipo Rocket.Q" /></a>
 
                     <div class="buttons">
                         
-                        <div class="button outlined" id="room-id" data-id="323232">
-                            #323232
-                            <img src="images/icon-copy.svg" alt="copiar número da sala">
+                        <div class="button outlined"
+                        id="room-id" 
+                        data-id="<%= roomId %>"
+                        >
+                            #<%= roomId%>
+                            <img src="/images/icon-copy.svg" alt="copiar número da sala">
                            
                         </div>
         
-                        <a href="create-room.html" class="button">
-                            <img src="images/icon-users-white.svg" alt="Criar nova sala">
+                        <a href="/create-room" class="button">
+                            <img src="/images/icon-users-white.svg" alt="Criar nova sala">
                             Criar Sala
                         </a>
                     </div>
@@ -49,18 +52,18 @@
             <main>
                 <section id="question-form">
                     <h2 class="title">Faça sua pergunta</h2>
-                    <form action="">
+                    <form action="/question/create/<%= roomId %>" method="POST">
                         
                         <label for="question" class="sr-only">O que você quer perguntar?</label>
-                        <textarea name="O que você quer perguntar?" id="question" placeholder="O que você quer perguntar?"></textarea>
+                        <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
                         <footer>
                             <div>   
-                                <img src="images/lock_black.svg" alt="">
+                                <img src="/images/lock_black.svg" alt="">
                                 Esta pergunta é anônima
                             </div>
     
                             <div>
-                                <a href="" class="button">Enviar</a>
+                                <button type="submit" class="button">Enviar</button>
                             </div>
                         </footer>
                     </form>
@@ -70,83 +73,64 @@
             <section id="questions">
                 <h2 class="sr-only">Perguntas da comunidade</h2>
 
-                 
-                 
+                       
                 <div class="questions">
-                    
-                    <!-- Question 1-->
-                    <div class="question-wrapper ">
+
+                    <% if(!existQuestions){%>
+                        <%- include('partials/noquestion') %>
+                    <% } %>
+
+                    <%    questions.forEach(question =>{ %>
+                         <!-- Question -->
+                    <div class="question-wrapper">
                         <div class="question-content ">
                             <div class="user">
-                                <img src="images/icon-users-white.svg" alt="Avatar">
+                                <img src="/images/icon-users-white.svg" alt="Avatar">
                             </div>
                             <div class="question">
-                                <p>Qual a diferença entre const var e let no JavaScript?</p>
+                                <p><%= question.title %></p>
                             </div>
                         </div>
                         <div class="actions">
                                        
-                                <a href="#" class="check" data-id="2">
-                                    <img src="images/icon-check.svg" alt="Marcar como lida">
+                                <a href="#" class="check" data-id="<%- question.id %>">
+                                    <img src="/images/icon-check.svg" alt="Marcar como lida">
                                     Marcar como Lida
                                 </a>
                             
-                                <a href="#" class="delete" data-id="2">   
-                                    <img src="images/icon-trash.svg" alt="Excluir">
+                                <a href="#" class="delete" data-id="<%- question.id %>">   
+                                    <img src="/images/icon-trash.svg" alt="Excluir">
                                     Excluir
                                 </a>
                        </div>
                     </div>
 
-                     <!-- Question 2-->
-                    <div class="question-wrapper ">
-                        <div class="question-content ">
-                            <div class="user">
-                                <img src="images/icon-users-white.svg" alt="Avatar">
-                            </div>
-                            <div class="question">
-                                <p>Qual a diferença entre const var e let no JavaScript?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                                       
-                                <a href="#" class="check" data-id="3">
-                                    <img src="images/icon-check.svg" alt="Marcar como lida">
-                                    Marcar como Lida
-                                </a>
-                            
-                                <a href="#" class="delete" data-id="3">   
-                                    <img src="images/icon-trash.svg" alt="Excluir">
-                                    Excluir
-                                </a>
-                       </div>
-                    </div>
-                     <!-- Question 3-->
-                    <div class="question-wrapper read">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="images/icon-users-white.svg" alt="Avatar">
-                            </div>
-                            <div class="question">
-                                <p>
-                                Qual a diferença entre const var e let no JavaScript?
-                                </p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                                       
-                                <a href="#" class="check" data-id="1">
-                                    <img src="images/icon-check.svg" alt="Marcar como lida">
-                                    Marcar como Lida
-                                </a>
-                            
-                                <a href="#" class="delete" data-id="1">   
-                                    <img src="images/icon-trash.svg" alt="Excluir">
-                                    Excluir
-                                </a>
-                       </div>
-                    </div>
+                    <% })%>
 
+                    <%    questionsRead.forEach(question =>{ %>
+                        <!-- Question -->
+                   <div class="question-wrapper read">
+                       <div class="question-content ">
+                           <div class="user">
+                               <img src="/images/icon-users-white.svg" alt="Avatar">
+                           </div>
+                           <div class="question">
+                               <p><%= question.title %></p>
+                           </div>
+                       </div>
+                       <div class="actions">
+                                      
+                               <a href="#" class="delete" data-id="<%- question.id %>">   
+                                   <img src="/images/icon-trash.svg" alt="Excluir">
+                                   Excluir
+                               </a>
+                      </div>
+                   </div>
+
+                   <% })%>
+                   
+
+              
                      <!-- /Questios-->
                 </div>
      
@@ -164,7 +148,7 @@
                 <h2 class="title">Excluir Pergunta</h2>
                 <p class="subtitle">Tem certeza que você deseja excluir está pergunta?</p>
 
-                <form action="" method="POST">
+                <form action="#" method="POST">
 
                     <label for="password" class="sr-only">Digite sua senha</label>
                     <input type="password" placeholder="Digite sua senha" id="password" name="password">
@@ -179,7 +163,7 @@
         </div>
 
         <!-- SCRIPTS-->
-        <script src="scripts/main.js" defer type="module"></script>
+        <script src="/scripts/main.js" defer type="module"></script>
       
     </body>
   </html>

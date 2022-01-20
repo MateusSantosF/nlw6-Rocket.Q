@@ -1,6 +1,4 @@
 
-
-
 export default function Modal(){
     
 
@@ -9,9 +7,6 @@ export default function Modal(){
     const cancelButton = document.querySelector('.button-group .cancel')
     cancelButton.addEventListener('click', close)
  
-
-    
-
     function open(){
       modalWrapper.classList.remove('disable')
     }
