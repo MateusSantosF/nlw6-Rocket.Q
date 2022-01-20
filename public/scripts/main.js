@@ -34,7 +34,6 @@ function validateTypeButton(event, typeCheck = true){
 
 
     const roomId = document.querySelector('#room-id').dataset.id
-    console.log(`AQUI PORRA ${roomId}`)
     const slug = typeCheck ? "check" : "delete"
     const questionId = event.target.dataset.id;
 
@@ -47,14 +46,4 @@ function validateTypeButton(event, typeCheck = true){
     const form = document.querySelector('.modal-wrapper .modal form')
     form.setAttribute('action', `/question/${roomId}/${questionId}/${slug}`)
     modal.open()
-}
-
-
-function copyClipboard(){
-    var text =  document.querySelector('#room-id').dataset.id
-    navigator.clipboard.writeText(text).then(function() {
-    console.log('Async: Copying to clipboard was successful!');
-    }, function(err) {
-     console.error('Async: Could not copy text: ', err);
-    });
 }
